@@ -50,7 +50,7 @@ async def main(client):
             await client.publish('iot/2024/' + config['client_id'].decode('utf-8'), datos, qos = 1)
         except OSError as e:
             print("sin sensor")
-        await asyncio.sleep(30)  # Broker is slow
+        await asyncio.sleep(60)  # Broker is slow
 
 # Define configuration
 config['subs_cb'] = sub_cb
