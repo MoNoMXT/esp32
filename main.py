@@ -19,7 +19,9 @@ import uasyncio as asyncio
 import dht, machine, json
 from collections import OrderedDict
 
-d = dht.DHT22(machine.Pin(13))
+vcc=machine.Pin(7,machine.Pin.OUT)
+vcc.value(1)
+d = dht.DHT22(machine.Pin(8))
 
 def sub_cb(topic, msg, retained):
     print('Topic = {} -> Valor = {}'.format(topic.decode(), msg.decode()))
